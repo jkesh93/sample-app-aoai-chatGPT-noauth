@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Node build
-        run: cd ./frontend; npm install; npm build; npm prune --production
+      - name: Install npm and build node app
+        run: cd ./frontend;npm install;npm run build; npm prune --production
         
       - name: Set up Python version
         uses: actions/setup-python@v1
