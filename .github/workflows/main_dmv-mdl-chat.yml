@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Node build
+        run: cd ./frontend; npm install; npm build; npm prune --production
+        
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
@@ -29,6 +32,7 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
